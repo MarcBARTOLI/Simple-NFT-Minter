@@ -51,7 +51,7 @@ contract Contract is ERC721A, Ownable, ReentrancyGuard {
     function devMint(uint8 quantity) external onlyOwner {
         if(totalSupply() + quantity > devSupply) revert ExceedSupply();
 
-        _safeMint(msg.sender, quantity);        
+        _mint(msg.sender, quantity);        
     }
 
     // ===== Private mint =====
@@ -61,7 +61,7 @@ contract Contract is ERC721A, Ownable, ReentrancyGuard {
         if(_numberMinted(msg.sender) + quantity > presaleMaxItemsPerWallet) revert ExceedMaxPerWallet();
         if(!isAddressWhitelisted(proof, msg.sender)) revert NotInWhitelist();
 
-        _safeMint(msg.sender, quantity);        
+        _mint(msg.sender, quantity);        
     }
 
     // ===== Public mint =====
@@ -69,7 +69,7 @@ contract Contract is ERC721A, Ownable, ReentrancyGuard {
         if(msg.value < mintPrice * quantity) revert InsufficientPayment();
         if(totalSupply() + quantity > collectionSupply) revert ExceedSupply();
 
-        _safeMint(msg.sender, quantity);        
+        _mint(msg.sender, quantity);        
     }
 
     // ===== Whitelisting =====
