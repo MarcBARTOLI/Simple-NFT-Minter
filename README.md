@@ -1,5 +1,7 @@
 # Simple-NFT-Minter
-The most basic smart contract for a NFT minter based on ERC721A
+The most basic smart contract for a NFT minter based on [ERC721A](https://github.com/chiru-labs/ERC721A).\
+This smart contract is written in Solidity in order to be deployed on the Ethereum blockchain or any L2 blockchain based on Ethereum.\
+It is ready to be deployed with Hardhat, or can be easily adapted to be used with any other tool you prefer.
 
 ## How to test
 1. Install [Hardhat](https://hardhat.org/getting-started/)
